@@ -6,7 +6,7 @@
 
 **Testing...**
 
-[NewFile.html](NewFile.html)
+[NewFile](NewFile.html)
 
 ![Kamaz Racecar](https://i.ytimg.com/vi/xrYRjV1ijvA/maxresdefault.jpg)
 
