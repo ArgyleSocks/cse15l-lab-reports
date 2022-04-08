@@ -6,7 +6,7 @@
 
 **Testing...**
 
-[NewFile.html](https://argylesocks.github.io/cse15l-lab-reports/NewFile.html)
+[NewFile.html](NewFile.html)
 
 ![Kamaz Racecar](https://i.ytimg.com/vi/xrYRjV1ijvA/maxresdefault.jpg)
 
