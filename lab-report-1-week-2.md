@@ -18,17 +18,25 @@ Atom is another text editor; it is the text editor I am personally using. The pr
 ![Sshing](sshing.JPG)
 *Using the SSH command. A lengthy chain of settings has been used in order to bypass the automatic use of SSH keys (unnecessary until you reach that step)*
 
-To remotely connect, type the command "ssh cs15lsp22###@ieng6.ucsd.edu", with the ### replaced by a set of characters unique and known to you. If you have not set up SSH keys, you will be prompted for your account password, which upon entering you will be connected to the remote host. If it is your first time, you must change your password in the AD portal before logging in first.
+To remotely connect, type the command `ssh cs15lsp22###@ieng6.ucsd.edu`, with the ### replaced by a set of characters unique and known to you. If you have not set up SSH keys, you will be prompted for your account password, which upon entering you will be connected to the remote host. If it is your first time, you must change your password in the AD portal before logging in first.
 
 ## Important Commands 
 ![lsing](lsing.JPG)
 
-**ls -a**: ls is the command used on unix systems to read out the contents of the current directory. ls -a is the command used to do the same, but to read out *hidden* contents of the directory as well. Using this variant may be necessary at times, not least to find the .ssh directory as you will need to later.
+`ls -a`: `ls` is the command used on unix systems to read out the contents of the current directory. `ls -a` is the command used to do the same, but to read out *hidden* contents of the directory as well. Using this variant may be necessary at times, not least to find the .ssh directory as you will need to later.
 
 ![scping](scping.JPG)
 
-**scp localfilepath host:remotepath**: scp is the command used to transfer files from the local disk to a remote host, localfilepath being the path of the file on the local disk, host being the remote host, and remotepath being the path on the remote disk to where you want the file to be placed.
+`scp localfilepath host:remotepath`: `scp` is the command used to transfer files from the local disk to a remote host, localfilepath being the path of the file on the local disk, host being the remote host, and remotepath being the path on the remote disk to where you want the file to be placed.
 
 ![moreing](moreing.JPG)
 
-**more filepath**: print out the contents of the specified file into the terminal. Useful when logged into the remote host for quickly seeing what is inside of a file without opening more complicated tools.
+`more filepath`: Print out the contents of the specified file into the terminal. Useful when logged into the remote host for quickly seeing what is inside of a file without opening more complicated tools.
+
+`mkdir dirname`: Create a directory with the indicated name.
+
+## SSH Keys
+You will quicky find it annoying to retype a hopefully lengthy password every time you use ssh. This can be circumvented by creating an SSH key, stored locally on your computer for quick login. To do this, type `ssh-keygen` into the terminal, enter the filepath you would like it saved to (it will create the file), and enter no passphrase:
+![keygen](keygening.JPG)
+
+I have saved the example into 'id_rsa2', and a second file 'id_rsa2.pub' has appeared with it. This .pub file must be scped to the .ssh directory on the remote host (if you do not have one, ssh into the remote host and create it with the command `mkdir .ssh`). 
