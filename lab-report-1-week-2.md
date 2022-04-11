@@ -39,4 +39,5 @@ To remotely connect, type the command `ssh cs15lsp22###@ieng6.ucsd.edu`, with th
 You will quicky find it annoying to retype a hopefully lengthy password every time you use ssh. This can be circumvented by creating an SSH key, stored locally on your computer for quick login. To do this, type `ssh-keygen` into the terminal, enter the filepath you would like it saved to (it will create the file), and enter no passphrase:
 ![keygen](keygening.JPG)
 
-I have saved the example into 'id_rsa2', and a second file 'id_rsa2.pub' has appeared with it. This .pub file must be scped to the .ssh directory on the remote host (if you do not have one, ssh into the remote host and create it with the command `mkdir .ssh`). 
+I have saved the example into 'id_rsa2', and a second file 'id_rsa2.pub' has appeared with it. This .pub file must be scped to the .ssh directory on the remote host (if you do not have one, ssh into the remote host and create it with the command `mkdir .ssh`). ssh into the remote host and enter the .ssh directory. In there is your .pub file. Type the command `cat nameofyour.pub >> authorized_keys`. What this will do is it will create a file (or attach to [concatenate, hence cat] if it exists) named authorized_keys and attach the contents of the .pub file to it.
+![cating](cating.JPG)
