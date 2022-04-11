@@ -41,3 +41,7 @@ You will quicky find it annoying to retype a hopefully lengthy password every ti
 
 I have saved the example into 'id_rsa2', and a second file 'id_rsa2.pub' has appeared with it. This .pub file must be scped to the .ssh directory on the remote host (if you do not have one, ssh into the remote host and create it with the command `mkdir .ssh`). ssh into the remote host and enter the .ssh directory. In there is your .pub file. Type the command `cat nameofyour.pub >> authorized_keys`. What this will do is it will create a file (or attach to [concatenate, hence cat] if it exists) named authorized_keys and attach the contents of the .pub file to it.
 ![cating](cating.JPG)
+
+## Optimizing Remote Running
+An interesting trick of the command `ssh` is that one can use it in such a way: `ssh remotehost command`, what this will do is connect to the remote host and run the specified command *there*. This means that one could in theory write the command `ssh remotehost javac WhereAmI.java`, meaning to compile the file "WhereAmI.java" - which is all the way on the remote host. One may find it useful to make edits to files locally, then to move them to the remote host and run them there. For this, a single command can then be constructed out of many, an example of which for java: `scp editedfile.java remotehost:filepath && ssh remotehost "javac editedfile.java; java nameofclasscontainingmainmethod"`. Here is this command demonstrated with a file named "sent.java" with a Main class named "main":
+![java](javaing.JPG)
