@@ -8,8 +8,24 @@ This is a tutorial on how to ssh into your remote account. First you will:
 
 This is fairly simple; [download your preferred build](https://code.visualstudio.com/Download) and follow the instructions presented by the installer, configuring options as needed. Once this is complete, VS Code will start and you will be presented with the depicted screen. 
 
-## Alternative: Atom
+### Alternative: Atom
 ![Screenshot](atom.PNG)
 *A screenshot of me editing markdown in Atom*
 
 Atom is another text editor; it is the text editor I am personally using. The primary advantages of VS Code are that it comes with a terminal built into the interface, and has a built in markdown editor. In Atom, these features can be supplanted by using the default terminal on your computer (I am on Windows 10; I use CMD) and installing a [markdown preview package](https://atom.io/packages/markdown-preview).
+
+## Remotely Connecting
+![Sshing](sshing.JPG)
+*Using the SSH command. A lengthy chain of settings has been used in order to bypass the automatic use of SSH keys (unnecessary until you reach that step)*
+
+To remotely connect, type the command "ssh cs15lsp22###@ieng6.ucsd.edu", with the ### replaced by a set of characters unique and known to you. If you have not set up SSH keys, you will be prompted for your account password, which upon entering you will be connected to the remote host. If it is your first time, you must change your password in the AD portal before logging in first.
+
+## Important Commands 
+![lsing](lsing.JPG)
+**ls -a**: ls is the command used on unix systems to read out the contents of the current directory. ls -a is the command used to do the same, but to read out *hidden* contents of the directory as well. Using this variant may be necessary at times, not least to find the .ssh directory as you will need to later.
+
+![scping](scping.JPG)
+**scp localfilepath host:remotepath**: scp is the command used to transfer files from the local disk to a remote host, localfilepath being the path of the file on the local disk, host being the remote host, and remotepath being the path on the remote disk to where you want the file to be placed.
+
+![moreing](moreing.JPG)
+**more filepath**: print out the contents of the specified file into the terminal. Useful when logged into the remote host for quickly seeing what is inside of a file without opening more complicated tools.
